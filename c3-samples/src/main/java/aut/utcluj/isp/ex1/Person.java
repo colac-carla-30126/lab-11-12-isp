@@ -11,14 +11,14 @@ public class Person {
 
 
     public Person(String firstName) {
-        this.firstName=firstName;
+        this.firstName = firstName;
         this.lastName = "";
         //throw new UnsupportedOperationException("Not supported yet.");
     }
 
     public Person(String firstName, String lastName) {
-        this.firstName=firstName;
-        this.lastName=lastName;
+        this.firstName = firstName;
+        this.lastName = lastName;
         //throw new UnsupportedOperationException("Not supported yet.");
     }
 
@@ -30,8 +30,6 @@ public class Person {
         return lastName;
     }
     //usfaasvasx
-
-
 
 
     @Override
@@ -47,5 +45,14 @@ public class Person {
     public int hashCode() {
         return Objects.hash(firstName, lastName);
     }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                '}';
+    }
+
 }
 
