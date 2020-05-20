@@ -9,16 +9,16 @@ public class Person {
     private String firstName;
     private String lastName;
 
-//HELLO GUYS
+    //HELLO GUYS
     public Person(String firstName) {
-        this.firstName=firstName;
+        this.firstName = firstName;
         this.lastName = "";
         //throw new UnsupportedOperationException("Not supported yet.");
     }
 
     public Person(String firstName, String lastName) {
-        this.firstName=firstName;
-        this.lastName=lastName;
+        this.firstName = firstName;
+        this.lastName = lastName;
         //throw new UnsupportedOperationException("Not supported yet.");
     }
 
@@ -29,9 +29,6 @@ public class Person {
     public String getLastName() {
         return lastName;
     }
-    //usfaasvasx
-
-
 
 
     @Override
@@ -39,13 +36,19 @@ public class Person {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Person person = (Person) o;
-        return firstName.equals(person.firstName) &&
-                lastName.equals(person.lastName);
+        return Objects.equals(firstName, person.firstName) &&
+                Objects.equals(lastName, person.lastName);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(firstName, lastName);
     }
+
+    @Override
+    public String toString() {
+        return this.firstName+" "+this.lastName;
+    }
 }
+
 
