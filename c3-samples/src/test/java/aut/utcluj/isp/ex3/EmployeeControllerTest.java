@@ -18,7 +18,6 @@ public class EmployeeControllerTest {
         final Employee employee = new Employee("Harvey", "Specter", 2000d, "1861216244480");
         final EmployeeController employeeController = new EmployeeController();
         employeeController.addEmployee(employee);
-
         assertEquals("Number of created employees to be one", 1, employeeController.getNumberOfEmployees());
     }
 
