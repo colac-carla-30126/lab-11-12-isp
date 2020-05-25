@@ -1,20 +1,28 @@
 package aut.utcluj.isp.ex4;
 
+
 public class SalaryInfo {
     private Double totalRevenue;
     private Double monthlyRevenue;
+
+    public SalaryInfo(Double totalRevenue, Double monthlyRevenue) {
+        this.totalRevenue = totalRevenue;
+        this.monthlyRevenue = monthlyRevenue;
+    }
 
     /**
      * If is not positive, an {@link NegativeAmountException} exception should be thrown
      *
      * @param monthlyRevenue
      */
-    public SalaryInfo(Double monthlyRevenue) throws NegativeAmountException {
+    public SalaryInfo(Double monthlyRevenue) {
         this.monthlyRevenue = monthlyRevenue;
-        this.totalRevenue = 0d;
-        if (this.monthlyRevenue < 0) {
-            throw new NegativeAmountException();
-        }
+        this.totalRevenue = 0.0;
+
+
+    }
+
+    public SalaryInfo() {
 
     }
 
@@ -22,7 +30,9 @@ public class SalaryInfo {
      * Add incoming salary to total revenue
      */
     public void addSalary() {
-        this.totalRevenue = totalRevenue + monthlyRevenue;
+        //throw new UnsupportedOperationException("Not supported yet.");
+        totalRevenue = totalRevenue + monthlyRevenue;
+        System.out.println("Total revenue after adding salary: " + totalRevenue);
     }
 
     /**
@@ -31,15 +41,10 @@ public class SalaryInfo {
      *
      * @param value - money to be added
      */
-    public void addMoney(final Double value) throws  NegativeAmountException{
-        if (value < 0) {
-            throw new NegativeAmountException();
-        }
-        else
-        {
-            this.totalRevenue=totalRevenue+value;
-        }
+    public void addMoney(final Double value) {
        // throw new UnsupportedOperationException("Not supported yet.");
+        totalRevenue = totalRevenue + value;
+        System.out.println("" + totalRevenue);
     }
 
     /**
@@ -49,15 +54,11 @@ public class SalaryInfo {
      *
      * @param value - value to be paid
      */
-    public void payTax(final Double value) throws Exception{
-       // throw new UnsupportedOperationException("Not supported yet.");
-        if( value<0) {
-            throw new NegativeAmountException();
-        }
-        if(value>totalRevenue){
-            throw  new NegativeBalanceException();
-        }
-        this.totalRevenue=totalRevenue-value;
+    public void payTax(final Double value) {
+        //throw new UnsupportedOperationException("Not supported yet.");
+        totalRevenue = totalRevenue - value;
+        System.out.println("" + totalRevenue);
+
     }
 
     public Double getTotalRevenue() {

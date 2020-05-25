@@ -6,7 +6,7 @@ import static org.junit.Assert.*;
 
 public class SalaryInfoTest {
     @Test
-    public void testCreate() throws NegativeAmountException{
+    public void testCreate() {
         final SalaryInfo salaryInfo = new SalaryInfo(300d);
         assertNotNull("Salary object cannot be null", salaryInfo);
         assertEquals("Revenue is 0", Double.valueOf(0d), salaryInfo.getTotalRevenue());
@@ -14,12 +14,12 @@ public class SalaryInfoTest {
     }
 
     @Test(expected = NegativeAmountException.class)
-    public void testCreateShouldThrowExceptionWhenMonthlyRevenueIsNegative () throws NegativeAmountException{
+    public void testCreateShouldThrowExceptionWhenMonthlyRevenueIsNegative() {
         new SalaryInfo(-300d);
     }
 
     @Test
-    public void testAddSalary() throws NegativeAmountException{
+    public void testAddSalary() {
         final SalaryInfo salaryInfo = new SalaryInfo(300d);
         assertNotNull("Salary object cannot be null", salaryInfo);
         assertEquals("Revenue is 0", Double.valueOf(0d), salaryInfo.getTotalRevenue());
@@ -33,7 +33,7 @@ public class SalaryInfoTest {
     }
 
     @Test
-    public void testAddMoney() throws NegativeAmountException{
+    public void testAddMoney() {
         final SalaryInfo salaryInfo = new SalaryInfo(300d);
         assertNotNull("Salary object cannot be null", salaryInfo);
         assertEquals("Revenue is 0", Double.valueOf(0d), salaryInfo.getTotalRevenue());
@@ -44,7 +44,7 @@ public class SalaryInfoTest {
     }
 
     @Test(expected = NegativeAmountException.class)
-    public void testAddMoneyShouldThrowExceptionWhenValueIsNegative() throws NegativeAmountException{
+    public void testAddMoneyShouldThrowExceptionWhenValueIsNegative() {
         final SalaryInfo salaryInfo = new SalaryInfo(300d);
         assertNotNull("Salary object cannot be null", salaryInfo);
         assertEquals("Revenue is 0", Double.valueOf(0d), salaryInfo.getTotalRevenue());
@@ -54,7 +54,7 @@ public class SalaryInfoTest {
     }
 
     @Test
-    public void testPayTax() throws Exception{
+    public void testPayTax() {
         final SalaryInfo salaryInfo = new SalaryInfo(300d);
         salaryInfo.addSalary();
 
@@ -64,13 +64,13 @@ public class SalaryInfoTest {
     }
 
     @Test(expected = NegativeAmountException.class)
-    public void testPayTaxShouldThrowExceptionWhenTaxIsNegative() throws Exception{
+    public void testPayTaxShouldThrowExceptionWhenTaxIsNegative() {
         final SalaryInfo salaryInfo = new SalaryInfo(300d);
         salaryInfo.payTax(-100d);
     }
 
     @Test(expected = NegativeBalanceException.class)
-    public void testPayTaxShouldThrowExceptionWhenNoEnoughMoneyFound() throws Exception{
+    public void testPayTaxShouldThrowExceptionWhenNoEnoughMoneyFound() {
         final SalaryInfo salaryInfo = new SalaryInfo(300d);
         salaryInfo.payTax(100d);
     }
