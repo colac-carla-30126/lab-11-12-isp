@@ -3,15 +3,21 @@ package aut.utcluj.isp.ex4;
 /**
  * @author stefan
  */
-public class Employee {
+public class Employee extends SalaryInfo {
     private String firstName;
     private String lastName;
     private String cnp;
     private SalaryInfo employeeSalaryInfo;
 
+
     public Employee(String firstName, String lastName, String cnp, Double monthlyRevenue) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        //throw new UnsupportedOperationException("Not supported yet.");
+        super(monthlyRevenue);
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.cnp = cnp;
     }
+
 
     public String getFirstName() {
         return firstName;
@@ -30,6 +36,7 @@ public class Employee {
      */
     public void addSalary() {
         throw new UnsupportedOperationException("Not supported yet.");
+
     }
 
     /**
@@ -58,5 +65,6 @@ public class Employee {
      */
     public SalaryInfo getSalaryInfo() {
         throw new UnsupportedOperationException("Not supported yet.");
+
     }
 }
